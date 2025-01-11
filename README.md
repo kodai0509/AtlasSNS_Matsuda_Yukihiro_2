@@ -1,1 +1,1 @@
-# AtlasSNS_Matsuda_Yukihir_2o
+# AtlasSNS_Matsuda_Yukihiro_2
