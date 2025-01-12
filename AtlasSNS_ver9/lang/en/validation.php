@@ -162,12 +162,20 @@ return [
     |
     */
 
-    'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
-    ],
+    'required' => ':attribute は必須です。',
+    'min' => ':attribute は最低 :min 文字必要です。',
+    'max' => ':attribute は最大 :max 文字までです。',
+    'unique' => ':attribute はすでに使用されています。',
+    'email' => ':attribute には有効なメールアドレスを入力してください。',
+    'regex' => ':attribute には英数字のみ使用可能です。',
+    'same' => ':attribute が一致しません。',
 
+    'attributes' => [
+        'username' => 'ユーザー名',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
+        'password_confirmation' => 'パスワード確認',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes

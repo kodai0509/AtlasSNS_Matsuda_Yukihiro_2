@@ -12,9 +12,8 @@ use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
-    /**
-     * Display the login view.
-     */
+
+    // ログイン//
     public function create(): View
     {
         return view('auth.login');
@@ -29,7 +28,19 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended('top');
+        $user = Auth::user();
+        session(['username' => $user->username]);
+
+        return redirect()->intended('index');
     }
 
+    // ログアウト処理//
+    public function destroy(Request $request): RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
+    }
 }

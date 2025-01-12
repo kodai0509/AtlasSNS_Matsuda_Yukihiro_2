@@ -28,33 +28,48 @@
   <header>
     @include('layouts.navigation')
   </header>
-  <!-- Page Content -->
+
   <div id="row">
     <div id="container">
       {{ $slot }}
     </div>
+
     <div id="side-bar">
       <div id="confirm">
-        <p>〇〇さんの</p>
-        <div>
-          <p>フォロー数</p>
-          <p>〇〇名</p>
+        <p>{{ Auth::user()->username }}さんの</p>
+        <div class="follow-count">
+          <p>フォロー数 {{ $followCount }}名</p>
         </div>
-        <p class="btn"><a href="">フォローリスト</a></p>
-        <div>
-          <p>フォロワー数</p>
-          <p>〇〇名</p>
+        <div class="follow-list">
+          <button type="button" class="btn btn-primary">
+            <a href="{{ route('follow.list') }}">フォローリスト</a>
+          </button>
         </div>
-        <p class="btn"><a href="">フォロワーリスト</a></p>
+        <div class="follower-count">
+          <p>フォロワー数 {{ $followerCount }}名</p>
+        </div>
+        <div class="follower-list">
+          <button type="button" class="btn btn-primary">
+            <a href="{{ route('follower.list') }}">フォロワーリスト</a>
+          </button>
+        </div>
+        <hr class="divider">
+        <!-- ユーザー検索ボタン -->
+        <div class="search-button-wrapper">
+          <button type="button" class="btn btn-primary">
+            <a href="{{ route('search') }}">ユーザー検索</a>
+          </button>
+        </div>
       </div>
-      <p class="btn"><a href="">ユーザー検索</a></p>
     </div>
-  </div>
-  <footer>
-  </footer>
-  <script src="{{ asset('js/app.js') }}"></script>
-  <script src="JavaScriptファイルのURL"></script>
-  <script src="JavaScriptファイルのURL"></script>
+
+    <footer>
+    </footer>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="JavaScriptファイルのURL"></script>
+    <script src="JavaScriptファイルのURL"></script>
 </body>
+
 
 </html>
