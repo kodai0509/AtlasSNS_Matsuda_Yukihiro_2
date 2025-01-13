@@ -3,10 +3,11 @@
   {!! Form::open(['route' => 'posts.store']) !!}
   <div class="form-group">
     <!-- アイコン表示 -->
-    <img class="user-icon" src="{{ Storage::url('images/' . (auth()->user()->icon_image ?? 'icon1.png')) }}">
+    <img class="my-icon" src="{{ Storage::url('images/' . (auth()->user()->icon_image ?? 'icon1.png')) }}">
     <!-- 投稿フォーム -->
-    {!! Form::textarea('newPost', null, ['class' => 'form-control', 'name' => 'newPost', 'required', 'placeholder' => '投稿内容を入力してください。']) !!}
-
+    <div class="textarea">
+      {!! Form::textarea('newPost', null, ['class' => 'form-control', 'name' => 'newPost', 'required', 'placeholder' => '投稿内容を入力してください。']) !!}
+    </div>
     <!-- 投稿ボタン -->
     <button type="submit" class="post-icon">
       <img src="{{ asset('images/post.png') }}">

@@ -167,7 +167,8 @@ header {
     font-size: 18px;
 }
 
-/* 投稿一覧のレイアウト */
+/* 投稿一覧のレイアウト(index.php) */
+/*  新しい投稿フォーム */
 .form-group {
     position: relative;
     display: flex;
@@ -176,6 +177,30 @@ header {
     background-color: #fff;
 }
 
+/* ログインユーザーのアイコン */
+.my-icon {
+    padding: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 60px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    object-fit: cover;
+}
+
+.form-group textarea {
+    resize: none;
+    width: 100%;
+    border: none;
+    padding-left: 20px;
+}
+
+.form-group textarea::placeholder {
+    padding-top: 60px;
+}
+
+/* 投稿ボタン */
 .post-icon {
     position: absolute;
     right: 150px;
@@ -186,13 +211,12 @@ header {
     border: none;
 }
 
-.form-group textarea {
-    resize: none;
-    width: 100%;
-    border: none;
-    padding-right: 50px;
+.post-icon img {
+    width: 50px;
+    height: 50px;
 }
 
+/* 投稿一覧 */
 .post-content {
     width: 100%;
     display: flex;
@@ -205,11 +229,6 @@ header {
     gap: 10px;
     padding-right: 10px;
     padding-left: 20px;
-}
-
-.post-icon img {
-    width: 50px;
-    height: 50px;
 }
 
 .li {
