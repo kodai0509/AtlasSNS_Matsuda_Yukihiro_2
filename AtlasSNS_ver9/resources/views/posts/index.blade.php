@@ -19,10 +19,11 @@
   <div class="post-index">
     @foreach($posts as $post)
     <ul>
-      <li class="post-block" style="position: relative;">
+      <li class="post-block">
         <div class="post-content">
           <figure class="users-icon">
-            <img class="rounded-circle" src="{{ Storage::url('images/' . ($post->user->icon_image ?? 'icon1.png')) }}">
+            <img class="rounded-circle"
+              src="{{ Storage::url('images/' . ($post->user->icon_image ?? 'icon1.png')) }}">
           </figure>
           <div class="post-info">
             <div class="post-name">{{ $post->user->username }}</div>
@@ -64,7 +65,7 @@
           <textarea name="post" class="modal_post" id="modal-post-content"></textarea>
           <div class="icon-container">
             <button type="submit" class="edit-submit-btn">
-              <img src="{{ asset('images/edit.png') }}" alt="更新" class="edit-icon">
+              <img src="{{ asset('images/edit.png') }}" alt="更新">
             </button>
           </div>
         </div>
