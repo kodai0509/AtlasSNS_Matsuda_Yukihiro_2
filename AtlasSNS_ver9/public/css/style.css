@@ -510,66 +510,78 @@ header {
     padding-right: 200px;
 }
 
-/* プロフィール編集 */
+/* プロフィール編集(profile.blade) */
+/* 自分のユーザー名の場合 */
 .profile-edit {
     display: flex;
-    padding-top: 20px;
+    padding-top: 50px;
     padding-left: 200px;
     gap: 20px;
 }
 
+/*アイコン*/
 .my-icon img {
     width: 40px;
     height: 40px;
     object-fit: cover;
 }
+
 /* 各フォームのスタイル */
-.profile-edit .name-edit,
-.profile-edit .mail-edit,
-.profile-edit .bio-edit,
-.profile-edit .password-edit,
-.profile-edit .password-confirmation,
-.profile-edit .icon-edit {
+.name-edit,
+.mail-edit,
+.bio-edit,
+.password-edit,
+.password-confirmation,
+.icon-edit {
     display: flex;
     align-items: center;
-    gap: 20px;
-    width: 300px;
-    padding-left: 10px;
+    width: 500px;
+    margin-left: auto;
     margin-bottom: 20px;
 }
 
-/* ラベルのスタイル */
+/* ラベルの設定 */
 .profile-edit label {
     font-weight: bold;
     font-size: 14px;
-    width: 1000px;
+    width: 30%;
     white-space: nowrap;
 }
 
-/* 入力フィールドのスタイル */
-.profile-edit input[type="text"],
-.profile-edit input[type="email"],
-.profile-edit input[type="password"],
-.profile-edit input[type="file"],
-.profile-edit .icon-edit input[type="file"] {
+/* 入力フォームの設定 */
+.name-edit input[type="text"],
+.mail-edit input[type="email"],
+.bio-edit input[type="text"],
+.password-edit input[type="password"],
+.password-confirmation input {
     border: 1px solid #ccc;
-    border-radius: 4px;
     font-size: 14px;
     background-color: #eeeeee;
-    width: 1000px;
-    gap: 20px;
+    width: 70%;
+    margin: auto;
+}
+
+.icon-edit input[type="file"] {
+    border: 1px solid #ccc;
+    color: transparent;
+    font-size: 14px;
+    background-color: #eeeeee;
+    margin: auto;
+    width: 70%;
+    height: 120px;
 }
 
 /* 保存ボタン */
-.profile-edit .edit-button button {
-    padding: 10px 20px;
-    background-color: #4caf50;
+.edit-button button {
+    background-color: #e74c3c;
+    margin-left: 100px;
+    margin-top: 20px;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    padding-top: 20px;
+    width: 100px;
 }
 
 /* プロフィール（その他ユーザ－の投稿一覧） */

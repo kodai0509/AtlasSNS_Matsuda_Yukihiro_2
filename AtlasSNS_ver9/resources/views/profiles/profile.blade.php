@@ -5,7 +5,8 @@
   <div class="profile-edit">
     <!-- アイコン表示 -->
     <div class="my-icon">
-      <img class="rounded-circle" src="{{ Storage::url('images/' . (auth()->user()->icon_image ?? 'icon1.png')) }}">
+      <img class="rounded-circle"
+        src="{{ Storage::url('images/' . (auth()->user()->icon_image ?? 'icon1.png')) }}">
     </div>
     <form action="{{ route('profiles.update') }}" method="POST" enctype="multipart/form-data">
       @csrf
@@ -58,8 +59,8 @@
   <div class="profile-group">
     <!-- ユーザーアイコン -->
     <figure class="profile-icon">
-      <img class="rounded-circle" src="{{
-                $user->icon_image && file_exists(storage_path('app/public/images/' . $user->icon_image)) ? Storage::url('images/' . $user->icon_image) : asset('images/icon1.png') }}">
+      <img class="rounded-circle"
+        src="{{$user->icon_image && file_exists(storage_path('app/public/images/' . $user->icon_image)) ? Storage::url('images/' . $user->icon_image) : asset('images/icon1.png') }}">
     </figure>
 
     <!-- ユーザー情報 -->
@@ -99,9 +100,8 @@
       <li class="post-block">
         <div class="post-header">
           <figure class="users-icon">
-            <img class="rounded-circle" src="{{
-                            $post->user->icon_image && file_exists(storage_path('app/public/images/' . $post->user->icon_image))
-                            ? Storage::url('images/' . $post->user->icon_image) : asset('images/icon1.png') }}">
+            <img class="rounded-circle"
+              src="{{ $post->user->icon_image && file_exists(storage_path('app/public/images/' . $post->user->icon_image)) ? Storage::url('images/' . $post->user->icon_image) : asset('images/icon1.png') }}">
           </figure>
           <div class="post-details">
             <div class="users-name">{{ $post->user->username }}</div>
