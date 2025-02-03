@@ -1,4 +1,7 @@
 <x-login-layout>
+  <h3>
+    フォローリスト
+  </h3>
   <!-- フォローリストのアイコン表示 -->
   <div class="follow-icons">
     @foreach($followingUsers as $follow)

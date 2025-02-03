@@ -1,10 +1,155 @@
 @charset "UTF-8";
 
-html{
+html,
+body {
     height: 100%;
+    margin: 0;
+    background: linear-gradient(to bottom, #186ac9 0%, #ffeb3b 100%);
+    background-attachment: fixed;
 }
 
-body{
-    height: 100%;
-    background: #186AC9;
+/* 共通の設定 */
+section {
+    padding: 50px 0;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.title h1 {
+    font-size: 24px;
+    color: white;
+}
+
+/* ログイン画面(login.blade.php) */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(
+        to bottom,
+        #186ac9 0%,
+        #ffeb3b 100%
+    ); /*青から黄色のグラデーション*/
+    border-radius: 8px;
+}
+
+.login-form h2 {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label {
+    color: white;
+}
+
+/* 新規ユーザーのリンク */
+.new-user {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.new-user a {
+    color: #4773ff;
+    text-decoration: none;
+}
+
+/* 新規ユーザー登録(register.blade.php) */
+.register-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(
+        to bottom,
+        #186ac9 0%,
+        #ffeb3b 100%
+    ); /*青から黄色のグラデーション*/
+    border-radius: 8px;
+}
+
+.register-form h2 {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+/* ボタンの設定（ログイン画面と新規ユーザー登録) */
+.login-btn {
+    text-align: right;
+}
+
+.register-btn {
+    text-align: right;
+}
+
+button {
+    display: block;
+    width: 40%;
+    margin-right: 0;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 登録完了画面 */
+.added-message {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 60px;
+    font-size: 18px;
+    background: linear-gradient(to bottom, #186ac9 0%, #ffeb3b 100%);
+    text-align: center;
+    color: #ccc;
+    border-radius: 8px;
+}
+
+.added-message02 {
+    /* font-size: 18px; */
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* ログインボタン */
+.login-btn02 {
+    text-align: center;
+}
+
+.login-btn02 a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 10px;
 }

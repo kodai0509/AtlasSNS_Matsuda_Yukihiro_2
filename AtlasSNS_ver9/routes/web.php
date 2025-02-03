@@ -53,6 +53,9 @@ Route::middleware('auth')->group(function () {
 
 // 登録 (新規ユーザー登録ページ)
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+// 登録後の追加ページ
+Route::get('/added', [RegisteredUserController::class, 'added'])->name('added');
+
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
 // ログイン (ログインページ)
