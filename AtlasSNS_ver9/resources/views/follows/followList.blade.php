@@ -1,16 +1,18 @@
 <x-login-layout>
-  <h3>
-    フォローリスト
-  </h3>
   <!-- フォローリストのアイコン表示 -->
-  <div class="follow-icons">
-    @foreach($followingUsers as $follow)
-    <a href="{{ route('profile.show', ['user' => $follow->id]) }}">
-      <img class="icon"
-        src="{{ $follow->icon_image && file_exists(storage_path('app/public/images/' . $follow->icon_image)) ? Storage::url('images/' . $follow->icon_image) : asset('images/icon1.png') }}"
-        alt="{{ $follow->username }}のアイコン">
-    </a>
-    @endforeach
+  <div class="follow-header">
+    <div class="title">
+      <h3>フォローリスト</h3>
+    </div>
+    <div class="follow-icons">
+      @foreach($followingUsers as $follow)
+      <a href="{{ route('profile.show', ['user' => $follow->id]) }}">
+        <img class="icon"
+          src="{{ $follow->icon_image && file_exists(storage_path('app/public/images/' . $follow->icon_image)) ? Storage::url('images/' . $follow->icon_image) : asset('images/icon1.png') }}"
+          alt="{{ $follow->username }}のアイコン">
+      </a>
+      @endforeach
+    </div>
   </div>
 
   <!-- 自分がフォローしているユーザーを表示 -->

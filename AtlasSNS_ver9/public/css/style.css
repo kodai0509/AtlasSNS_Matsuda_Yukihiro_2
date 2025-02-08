@@ -334,26 +334,19 @@ header {
 }
 
 /* フォローリスト(followList.blade.php) */
-h3 {
-    margin-left: 40px;
-}
-
-.follow-icons {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.follow-header {
+    margin-top: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     border-bottom: 10px solid #b3b3b3;
-    flex-wrap: wrap;
-    width: 100%;
 }
-
-/* 各アイコンが10個以上になったら折り返し */
-.follow-icons > a {
-    display: inline-block;
-    text-align: center;
+.title {
+    width: 30%;
+    margin-left: 20px;
+}
+.follow-icons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
 }
 
 .follow-content {
@@ -361,21 +354,12 @@ h3 {
     padding-top: 10px;
     padding-left: 10px;
     display: flex;
-    align-items: center;
-}
-
-.follow-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: flex-start;
 }
 
 .follow-icon {
     padding-left: 50px;
     padding-right: 20px;
     display: flex;
-    align-items: center;
 }
 
 .follow-icon img {
@@ -383,6 +367,12 @@ h3 {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+}
+.follow-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
 }
 
 .follow-name {
@@ -394,26 +384,19 @@ h3 {
 }
 
 /* フォロワーリスト(FollowerList.blade.php) */
-h3 {
-    margin-left: 40px;
-}
-
-.follower-icons {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.follower-header {
+    margin-top: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     border-bottom: 10px solid #b3b3b3;
-    flex-wrap: wrap;
-    width: 100%;
 }
-
-/* 各アイコンが10個以上になったら折り返し */
-.follower-icons > a {
-    display: inline-block;
-    text-align: center;
+.title {
+    width: 30%;
+    margin-left: 20px;
+}
+.follower-icons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
 }
 
 .follower-content {
