@@ -3,7 +3,10 @@
   {!! Form::open(['route' => 'posts.store']) !!}
   <div class="form-group">
     <!-- アイコン表示 -->
-    <img class="my-icon" src="{{ Storage::url('images/' . (auth()->user()->icon_image ?? 'icon1.png')) }}">
+    <img class="my-icon"
+      src="{{ auth()->user()->icon_image && file_exists(storage_path('app/public/images/' . auth()->user()->icon_image))
+          ? Storage::url('images/' . auth()->user()->icon_image)
+          : asset('images/icon1.png') }}">
     <!-- 投稿フォーム -->
     <div class="textarea">
       {!! Form::textarea('newPost', null, ['class' => 'form-control', 'name' => 'newPost', 'required', 'placeholder' => '投稿内容を入力してください。']) !!}
@@ -23,7 +26,8 @@
         <div class="post-content">
           <figure class="users-icon">
             <img class="rounded-circle"
-              src="{{ Storage::url('images/' . ($post->user->icon_image ?? 'icon1.png')) }}">
+              src="{{ $post->user->icon_image && file_exists(storage_path('app/public/images/' . $post->user->icon_image))
+            ? Storage::url('images/' . $post->user->icon_image): asset('images/icon1.png') }}">
           </figure>
           <div class="post-info">
             <div class="post-name">{{ $post->user->username }}</div>

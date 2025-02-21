@@ -175,6 +175,7 @@ header {
     align-items: center;
     border-bottom: 10px solid #b3b3b3;
     background-color: #fff;
+    width: ;
 }
 
 /* ログインユーザーのアイコン */
@@ -191,7 +192,7 @@ header {
 
 .form-group textarea {
     resize: none;
-    width: 100%;
+    width: 70%;
     border: none;
     margin-left: 20px;
 }
@@ -203,8 +204,9 @@ header {
 /* 投稿ボタン */
 .post-icon {
     position: absolute;
+    width: 30%;
     right: 150px;
-    top: 50%;
+    top: 60%;
     bottom: 200px;
     transform: translateY(-50%);
     background: transparent;

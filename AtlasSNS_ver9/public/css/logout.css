@@ -36,11 +36,7 @@ section {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(
-        to bottom,
-        #186ac9 0%,
-        #ffeb3b 100%
-    ); /*青から黄色のグラデーション*/
+    background: #5b92ac;
     border-radius: 8px;
 }
 
@@ -69,8 +65,8 @@ label {
 }
 
 .new-user a {
-    color: #4773ff;
     text-decoration: none;
+    color: white;
 }
 
 /* 新規ユーザー登録(register.blade.php) */
@@ -79,11 +75,7 @@ label {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(
-        to bottom,
-        #186ac9 0%,
-        #ffeb3b 100%
-    ); /*青から黄色のグラデーション*/
+    background: #5b92ac;
     border-radius: 8px;
 }
 
@@ -126,7 +118,7 @@ button {
     padding: 20px;
     margin-top: 60px;
     font-size: 18px;
-    background: linear-gradient(to bottom, #186ac9 0%, #ffeb3b 100%);
+    background: #5b92ac;
     text-align: center;
     color: #ccc;
     border-radius: 8px;
