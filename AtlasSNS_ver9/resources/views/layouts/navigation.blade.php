@@ -19,9 +19,9 @@
                 <div class="user-menu">
                     <p class="user-name">{{ Auth::user()->username }} さん</p>
                     <span @click="open = !open" class="arrow">
-                        <span x-text="open ? '▲' : '▼'"></span>
+                        <span x-text="open ? '⌃' : '⌄'"></span>
                     </span>
-                    <img class="rounded-circle" src="{{ Storage::url('images/' . auth()->user()->icon_image) }}" class="user-icon">
+                    <img class="rounded-circle user-icon" src="{{ asset('images/' . auth()->user()->icon_image) }}">
                 </div>
                 <!-- アコーディオンメニュー -->
                 <ul x-show="open" x-cloak class="menu-list">

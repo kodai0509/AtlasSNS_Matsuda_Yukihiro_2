@@ -6,7 +6,7 @@
     <!-- アイコン表示 -->
     <div class="my-icon">
       <img class="rounded-circle"
-        src="{{ Storage::url('images/' . (auth()->user()->icon_image ?? 'icon1.png')) }}">
+        src="{{ auth()->user()->icon_image && file_exists(public_path('images/' . auth()->user()->icon_image)) ? asset('images/' . auth()->user()->icon_image) : asset('images/icon1.png') }}">
     </div>
     <form action="{{ route('profiles.update') }}" method="POST" enctype="multipart/form-data">
       @csrf
@@ -23,12 +23,6 @@
         <input type="email" id="email" name="email" value="{{ old('email', $user->email) }}" required>
       </div>
 
-      <!-- 自己紹介文編集 -->
-      <div class="bio-edit">
-        <label for="bio">自己紹介文</label>
-        <input type="text" id="bio" name="bio" rows="4" value="{{ old('bio', $user->bio) }}">
-      </div>
-
       <!-- パスワード -->
       <div class="password-edit">
         <label for="password">パスワード</label>
@@ -39,6 +33,12 @@
       <div class="password-confirmation">
         <label for="password_confirmation">パスワード確認</label>
         <input type="password" id="password_confirmation" name="password_confirmation">
+      </div>
+
+      <!-- 自己紹介文編集 -->
+      <div class="bio-edit">
+        <label for="bio">自己紹介文</label>
+        <input type="text" id="bio" name="bio" rows="4" value="{{ old('bio', $user->bio) }}">
       </div>
 
       <!-- アイコン -->
@@ -60,7 +60,7 @@
     <!-- ユーザーアイコン -->
     <figure class="profile-icon">
       <img class="rounded-circle"
-        src="{{$user->icon_image && file_exists(storage_path('app/public/images/' . $user->icon_image)) ? Storage::url('images/' . $user->icon_image) : asset('images/icon1.png') }}">
+        src="{{ $user->icon_image && file_exists(public_path('images/' . $user->icon_image)) ? asset('images/' . $user->icon_image) : asset('images/icon1.png') }}">
     </figure>
 
     <!-- ユーザー情報 -->
@@ -101,7 +101,7 @@
         <div class="post-header">
           <figure class="users-icon">
             <img class="rounded-circle"
-              src="{{ $post->user->icon_image && file_exists(storage_path('app/public/images/' . $post->user->icon_image)) ? Storage::url('images/' . $post->user->icon_image) : asset('images/icon1.png') }}">
+              src="{{ $post->user->icon_image && file_exists(public_path('images/' . $post->user->icon_image)) ? asset('images/' . $post->user->icon_image) : asset('images/icon1.png') }}">
           </figure>
           <div class="post-details">
             <div class="users-name">{{ $post->user->username }}</div>

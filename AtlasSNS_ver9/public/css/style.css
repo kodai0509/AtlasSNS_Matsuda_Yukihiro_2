@@ -30,6 +30,8 @@ header {
     border-left: 1px solid #727272;
     height: auto;
     min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #side-bar a {
@@ -53,6 +55,8 @@ header {
     height: 1px;
     background-color: #b3b3b3;
     margin: 20px 0;
+    width: calc(100% + 40px);
+    transform: translateX(-20px);
 }
 
 .search-button-wrapper {
@@ -80,9 +84,18 @@ header {
     color: white;
 }
 
+/* ロゴのスタイル */
+.logo {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    height: 40px;
+    vertical-align: middle;
+}
+
 /* 矢印の設定 */
 .arrow {
-    font-size: 18px;
+    font-size: 24px;
     color: white;
     margin-left: 5px;
     cursor: pointer;
@@ -104,12 +117,6 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ロゴのスタイル */
-.logo {
-    height: 40px;
-    vertical-align: middle;
-}
-
 .menu-list li {
     padding: 10px;
     text-align: center;
@@ -125,7 +132,6 @@ header {
 .menu-list li:hover,
 .menu-list li:active {
     background-color: #0056b3;
-    /* 選択時に青に */
     color: white;
 }
 
@@ -135,6 +141,9 @@ header {
     display: block;
 }
 
+.menu-list li a:hover {
+    color: white;
+}
 /* クリック時の動き */
 
 [x-show="open"] {
@@ -175,7 +184,6 @@ header {
     align-items: center;
     border-bottom: 10px solid #b3b3b3;
     background-color: #fff;
-    width: ;
 }
 
 /* ログインユーザーのアイコン */
@@ -236,9 +244,6 @@ header {
 .post-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding-right: 10px;
-    padding-left: 20px;
 }
 
 /* ユーザーのアイコン設定 */
@@ -292,8 +297,25 @@ header {
     transition: 0.3s;
 }
 
-.delete:hover {
-    filter: invert(100%);
+/* 削除ボタン */
+.trash-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 25px;
+    bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 通常時*/
+.trash-icon[src*="trash-h.png"] {
+    content: url("../images/trash.png");
+}
+
+/* ホバー時*/
+.trash-icon:hover {
+    content: url("../images/trash-h.png");
 }
 
 /* 投稿編集のモーダル */
@@ -337,8 +359,10 @@ header {
 
 /* フォローリスト(followList.blade.php) */
 .follow-header {
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
+    align-items: center;
     border-bottom: 10px solid #b3b3b3;
 }
 .title {
@@ -347,6 +371,7 @@ header {
 }
 .follow-icons {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     width: 50%;
 }
@@ -387,8 +412,10 @@ header {
 
 /* フォロワーリスト(FollowerList.blade.php) */
 .follower-header {
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
+    align-items: center;
     border-bottom: 10px solid #b3b3b3;
 }
 .title {
@@ -398,6 +425,7 @@ header {
 .follower-icons {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     width: 50%;
 }
 

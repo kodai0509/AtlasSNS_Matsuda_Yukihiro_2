@@ -43,7 +43,7 @@
 
             <!-- 削除アイコン -->
             <a href="#" onclick="submitDeleteForm(event, {{ $post->id }})">
-              <img src="{{ asset('images/trash-h.png') }}" class="delete" alt="削除">
+              <img src="{{ asset('images/trash.png') }}" class="delete trash-icon" alt="削除">
             </a>
           </div>
           <!-- 削除フォーム -->

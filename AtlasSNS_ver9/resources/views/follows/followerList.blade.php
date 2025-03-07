@@ -1,10 +1,10 @@
 <x-login-layout>
-  <div class="follower-header">
+  <div class="follower-header align-items-center">
     <div class="title">
       <h3>フォロワーリスト</h3>
     </div>
     <!-- フォロワーリストのアイコン表示 -->
-    <div class="follower-icons">
+    <div class="follower-icons align-items-center">
       @foreach($followerUsers as $follower)
       <a href="{{ route('profile.show', ['user' => $follower->id]) }}">
         <img class="icon"
