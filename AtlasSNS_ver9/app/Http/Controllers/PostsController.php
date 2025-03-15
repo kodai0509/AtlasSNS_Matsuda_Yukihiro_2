@@ -44,6 +44,10 @@ class PostsController extends Controller
         // バリデーション
         $validated = $request->validate([
             'newPost' => 'required|string|max:150',
+            [
+                'newPost.required' => '投稿内容を入力してください。',
+                'newPost.max' => '投稿は150文字以内で入力してください。',
+            ]
         ]);
 
         // 新しい投稿を作成
@@ -62,6 +66,10 @@ class PostsController extends Controller
         // バリデーション（150文字まで）
         $validated = $request->validate([
             'post' => 'required|string|max:150',
+            [
+                'post.required' => '投稿内容を入力してください。',
+                'post.max' => '投稿は150文字以内で入力してください。',
+            ]
         ]);
 
         // 投稿を取得

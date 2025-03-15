@@ -6,7 +6,9 @@
     <!-- アイコン表示 -->
     <div class="my-icon">
       <img class="rounded-circle"
-        src="{{ auth()->user()->icon_image && file_exists(public_path('images/' . auth()->user()->icon_image)) ? asset('images/' . auth()->user()->icon_image) : asset('images/icon1.png') }}">
+        src="{{ auth()->user()->icon_image && file_exists(storage_path('app/public/images/' . auth()->user()->icon_image))
+          ? Storage::url('images/' . auth()->user()->icon_image)
+          : asset('images/icon1.png') }}">
     </div>
     <form action="{{ route('profiles.update') }}" method="POST" enctype="multipart/form-data">
       @csrf
@@ -44,13 +46,26 @@
       <!-- アイコン -->
       <div class="icon-edit">
         <label for="icon_image">アイコン画像</label>
-        <input type="file" id="icon_image" name="icon_image">
+        <div class="file-input-wrapper">
+          <label for="icon_image" class="custom-file-label">ファイルを選択する</label>
+          <input type="file" id="icon_image" name="icon_image">
+        </div>
       </div>
-
       <!-- 保存ボタン -->
       <div class="edit-button">
         <button type="submit" class="btn btn-success">更新</button>
       </div>
+
+      @if($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
+
     </form>
   </div>
   @else

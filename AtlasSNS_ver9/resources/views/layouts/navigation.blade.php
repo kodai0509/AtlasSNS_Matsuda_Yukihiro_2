@@ -21,7 +21,9 @@
                     <span @click="open = !open" class="arrow">
                         <span x-text="open ? '⌃' : '⌄'"></span>
                     </span>
-                    <img class="rounded-circle user-icon" src="{{ asset('images/' . auth()->user()->icon_image) }}">
+                    <img class="rounded-circle user-icon"
+                        src="{{ auth()->user()->icon_image && file_exists(storage_path('app/public/images/' . auth()->user()->icon_image))? Storage::url('images/' . auth()->user()->icon_image):
+                        asset('images/icon1.png') }}">
                 </div>
                 <!-- アコーディオンメニュー -->
                 <ul x-show="open" x-cloak class="menu-list">

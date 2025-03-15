@@ -176,6 +176,25 @@ return [
         'password' => 'パスワード',
         'password_confirmation' => 'パスワード確認',
     ],
+    'required' => ':attribute は必須です。',
+    'email' => ':attribute の形式が正しくありません。',
+    'max' => [
+        'string' => ':attribute は :max 文字以内で入力してください。',
+    ],
+    'min' => [
+        'string' => ':attribute は :min 文字以上で入力してください。',
+    ],
+    'confirmed' => ':attribute が確認欄と一致しません。',
+    'unique' => ':attribute は既に登録されています。',
+    'image' => ':attribute には画像ファイルを選択してください。',
+    'attributes' => [
+        'username' => 'ユーザー名',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
+        'password_confirmation' => 'パスワード確認',
+        'bio' => '自己紹介文',
+        'icon_image' => 'アイコン画像',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes

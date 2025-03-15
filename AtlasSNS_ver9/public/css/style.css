@@ -582,13 +582,39 @@ header {
     margin: auto;
 }
 
-.icon-edit input[type="file"] {
+.icon-edit {
+    margin-bottom: 20px;
+}
+
+.file-input-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #ccc;
-    color: transparent;
     font-size: 14px;
-    background-color: #eeeeee;
+    background-color: #eeeeee; /* 背景色 */
     width: 70%;
     height: 120px;
+    overflow: hidden;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.custom-file-label {
+    background-color: #fff;
+    color: #eeeeee;
+    text-align: center;
+    width: 70% !important;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 10px 0px;
+    font-size: 1px;
 }
 
 /* 保存ボタン */
@@ -603,6 +629,11 @@ header {
     font-size: 16px;
     width: 100px;
 }
+
+/* .edit-button .btn.btn-success:hover {
+    background-color: #e74c3c;
+    color: white;
+} */
 
 /* プロフィール（その他ユーザ－の投稿一覧） */
 .profile-group {

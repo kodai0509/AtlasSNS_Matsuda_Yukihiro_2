@@ -102,6 +102,28 @@
       });
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+      // 投稿フォームのバリデーション
+      const textarea = document.querySelector('textarea[name="newPost"]');
+      if (textarea) {
+        textarea.addEventListener('input', function() {
+          if (this.value.length > 150) {
+            alert('投稿は150文字以内で入力してください。');
+            this.value = this.value.substring(0, 150);
+          }
+        });
+      }
+      // 編集時のバリデーション
+      const modalTextarea = document.getElementById('modal-post-content');
+      if (modalTextarea) {
+        modalTextarea.addEventListener('input', function() {
+          if (this.value.length > 150) {
+            alert('投稿は150文字以内で入力してください。');
+            this.value = this.value.substring(0, 150);
+          }
+        });
+      }
+    });
     // 削除フォームを送信
     function submitDeleteForm(event, postId) {
       event.preventDefault();
