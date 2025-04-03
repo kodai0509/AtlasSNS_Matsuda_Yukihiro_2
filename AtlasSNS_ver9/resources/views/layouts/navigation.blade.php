@@ -18,24 +18,25 @@
             <div class="user-container">
                 <div class="user-menu">
                     <p class="user-name">{{ Auth::user()->username }} さん</p>
-                    <span @click="open = !open" class="arrow">
-                        <span x-text="open ? '⌃' : '⌄'"></span>
-                    </span>
+                    <div @click="open = !open" class="arrow">
+                        <span :class="{ 'rotate': !open }">⌃</span>
+                    </div>
+
                     <img class="rounded-circle user-icon"
-                        src="{{ auth()->user()->icon_image && file_exists(storage_path('app/public/images/' . auth()->user()->icon_image))? Storage::url('images/' . auth()->user()->icon_image):
-                        asset('images/icon1.png') }}">
+                        src="{{ auth()->user()->icon_image && file_exists(storage_path('app/public/images/' . auth()->user()->icon_image))? Storage::url('images/' . auth()->user()->icon_image): asset('images/icon1.png') }}">
+
+                    <!-- アコーディオンメニュー -->
+                    <ul x-show="open" x-cloak class="menu-list">
+                        <li><a href="{{ route('posts.index') }}">ホーム</a></li>
+                        <li><a href="{{ route('profiles.profile') }}">プロフィール編集</a></li>
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                @csrf
+                                <button type="submit" style="background: none; border: none; color: inherit; cursor: pointer;">ログアウト</button>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
-                <!-- アコーディオンメニュー -->
-                <ul x-show="open" x-cloak class="menu-list">
-                    <li><a href="{{ route('posts.index') }}">ホーム</a></li>
-                    <li><a href="{{ route('profiles.profile') }}">プロフィール編集</a></li>
-                    <li>
-                        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                            @csrf
-                            <button type="submit" style="background: none; border: none; color: inherit; cursor: pointer;">ログアウト</button>
-                        </form>
-                    </li>
-                </ul>
             </div>
         </div>
     </header>
