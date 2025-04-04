@@ -7,7 +7,6 @@
     <!-- ログインフォーム部分 -->
     <div class="login-form">
       <h2>AtlasSNSへようこそ</h2>
-      <!-- 適切なURLを入力してください -->
       {!! Form::open(['url' => route('login')]) !!}
       <div class="mail">
         <label>メールアドレス</label>

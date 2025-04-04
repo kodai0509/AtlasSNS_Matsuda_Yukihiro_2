@@ -36,11 +36,7 @@ section {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(
-        to bottom,
-        rgba(24, 106, 201, 0.7) 0%,
-        rgba(255, 235, 59, 0.7) 100%
-    );
+    background-color: rgba(10, 20, 50, 0.15);
     border-radius: 8px;
 }
 
@@ -79,11 +75,7 @@ label {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(
-        to bottom,
-        rgba(24, 106, 201, 0.7) 0%,
-        rgba(255, 235, 59, 0.7) 100%
-    );
+    background-color: rgba(10, 20, 50, 0.15);
     border-radius: 8px;
 }
 
@@ -126,11 +118,7 @@ button {
     padding: 20px;
     margin-top: 60px;
     font-size: 18px;
-    background: linear-gradient(
-        to bottom,
-        rgba(24, 106, 201, 0.7) 0%,
-        rgba(255, 235, 59, 0.7) 100%
-    );
+    background-color: rgba(10, 20, 50, 0.15);
     text-align: center;
     color: #ccc;
     border-radius: 8px;
